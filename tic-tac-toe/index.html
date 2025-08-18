@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tic Tac Toe AI</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body data-theme="light">
+  <h1>Tic Tac Toe</h1>
+
+  <div class="theme-toggle" title="Toggle Light/Dark Mode">
+  <span id="themeIcon">🌞</span>
+  <label class="switch">
+    <input type="checkbox" id="themeToggle" onchange="toggleTheme()">
+    <span class="slider round"></span>
+  </label>
+</div>
+<script>// Load theme from local storage
+const savedTheme = localStorage.getItem("theme");
+function toggleTheme() {
+  const icon = document.getElementById("themeIcon");
+  icon.classList.add("fade-out");
+
+  setTimeout(() => {
+    const isDark = document.getElementById("themeToggle").checked;
+    const theme = isDark ? "dark" : "light";
+    document.body.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+    icon.textContent = isDark ? "🌙" : "🌞";
+
+    icon.classList.remove("fade-out");
+    icon.classList.add("fade-in");
+  }, 300);
+
+  // Remove fade-in class after animation finishes to reset
+  setTimeout(() => {
+    icon.classList.remove("fade-in");
+  }, 600);
+}
+
+
+
+
+</script>
+</select>
+
+  
+ <label for="difficulty">Difficulty:</label>
+<select id="difficulty" class="styled-select">
+  <option value="easy">Easy</option>
+  <option value="medium">Medium</option>
+  <option value="hard">Hard</option>
+</select>
+
+  <div id="scoreboard">
+    <p>Player Wins: <span id="playerWins">0</span></p>
+    <p>AI Wins: <span id="aiWins">0</span></p>
+    <p>Draws: <span id="draws">0</span></p>
+  </div>
+
+  <div class="board" id="board"></div>
+
+  <button onclick="undoMove()">Undo</button>
+  <p id="status"></p>
+  <p>Time Left: <span id="timer">10</span>s</p>
+
+  <script src="./script.js"></script>
+</body>
+</html>

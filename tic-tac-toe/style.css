@@ -1,0 +1,243 @@
+/* General Styling */
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #00bcd4;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Selects and Button Styling */
+select,
+button {
+  font-size: 1rem;
+  padding: 8px 14px;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+select:hover,
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+}
+
+/* Theme Styling */
+body[data-theme="dark"] {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+body[data-theme="light"] {
+  background-color: #f9f9f9;
+  color: #222;
+}
+/* add ther hover to a styled select*/
+.styled-select {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(37, 117, 252, 0.6);
+  transition: background 0.3s ease;
+}
+
+.styled-select:hover, .styled-select:focus {
+  background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+  outline: none;
+  box-shadow: 0 4px 12px rgba(106, 17, 203, 0.8);
+}
+
+/* Optional: style the dropdown arrow */
+.styled-select {
+  -webkit-appearance: none;  /* For Safari */
+  -moz-appearance: none;     /* For Firefox */
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpath fill='%23fff' d='M4 6l4 4 4-4z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+  padding-right: 30px;
+}
+
+/* Theme Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin: 10px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/*theme icon*/
+#themeIcon {
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#themeIcon.fade-out {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+#themeIcon.fade-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/*toogle */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+
+/* Board Styling */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+  margin-top: 20px;
+  animation: fadeInBoard 1s ease-in-out;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s, background-color 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.cell:hover {
+  transform: scale(1.08);
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+body[data-theme="dark"] .cell {
+  background-color: #1e1e1e;
+  color: #eee;
+}
+
+body[data-theme="dark"] .cell:hover {
+  background-color: #333;
+  color: #03dac6;
+}
+
+/* Scoreboard Styling */
+#scoreboard {
+  margin-top: 15px;
+  text-align: center;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+#scoreboard p {
+  margin: 4px 0;
+  font-size: 1.1rem;
+  color: #4caf50;
+}
+
+/* Status and Timer */
+#status {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ff9800;
+}
+
+#timer {
+  font-weight: bold;
+  color: #f44336;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInBoard {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive Layout */
+@media (max-width: 400px) {
+  .board {
+    grid-template-columns: repeat(3, 80px);
+  }
+
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+}
