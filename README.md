@@ -126,4 +126,4 @@ Tic-Tac-Toe/
 
 ## 🖼️ Screenshots
 
-<img width="900" alt="image" src="https://github.com/user-attachments/assets/your-tic-tac-toe-screenshot.png" />
+<img width="1515" height="949" alt="Screenshot 2025-08-18 225950" src="https://github.com/user-attachments/assets/5ee60c7f-3fc0-4e66-a712-897f41ef0fda" />
