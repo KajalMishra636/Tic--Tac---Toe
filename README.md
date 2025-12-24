@@ -58,7 +58,7 @@ Tic-Tac-Toe/
 ---
 
 ## Local Visit
-https://prqqsx7m-5500.inc1.devtunnels.ms/
+tictac-8610ntgc5-kajals-projects-277e3b8f.vercel.app
 
 ## 🛠️ Getting Started
 
