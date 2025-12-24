@@ -58,7 +58,7 @@ Tic-Tac-Toe/
 ---
 
 ## Local Visit
-[tictac-8610ntgc5-kajals-projects-277e3b8f.vercel.app](https://vercel.com/kajals-projects-277e3b8f/tic_tac_toe)
+[[tictac-8610ntgc5-kajals-projects-277e3b8f.vercel.app](https://vercel.com/kajals-projects-277e3b8f/tic_tac_toe)](https://tictactoe-flax-sigma.vercel.app/)
 
 ## 🛠️ Getting Started
 
